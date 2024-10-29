@@ -2,13 +2,13 @@ from abc import ABC, abstractmethod
 
 # singleton (manager)
 class CarProductionManager:
-    _instance = None
+    instance = None
 
     def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super(CarProductionManager, cls).__new__(cls)
-            cls._instance.name = "Chief Production Manager"
-        return cls._instance
+        if cls.instance is None:
+            cls.instance = super(CarProductionManager, cls).__new__(cls)
+            cls.instance.name = "Chief Production Manager"
+        return cls.instance
 
 # factory method (car types)
 class Car(ABC):
